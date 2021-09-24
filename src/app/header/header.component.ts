@@ -31,13 +31,6 @@ export class HeaderComponent implements OnInit {
     this.authService.signOutUser();
   }
 
-  routerLinkAccueilOrMusicsList() {
-    if(this.isAuth) {
-      return "musics"
-    }
-    else {
-      return "accueil"
-    }
-  }
+
 
 }
