@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Vos musiques</h2>
+        <div class="light-group">
+            <button class="list-group-item"
+                    *ngFor="let music of musics; let i = index"
+                    (click)="onViewMusic(i)">
+                <h3 class="list-group-item-heading"> {{ music.title }}
+                    <button class="btn btn-default pull-right" (click)="onDeleteMusic(music)">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </h3>
+                <p class="list-group-item-text">{{ music.artist }}</p>
+            </button>
+        </div>
+        <button class="btn btn-primary" (click)="onNewMusic()">Nouveau titre</button>
+    </div>
+</div>
