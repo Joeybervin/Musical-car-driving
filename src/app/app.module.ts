@@ -9,6 +9,8 @@ import { MusicListComponent } from './music-list/music-list.component';
 import { SingleMusicComponent } from './music-list/single-music/single-music.component';
 import { MusicFormComponent } from './music-list/music-form/music-form.component';
 import { HeaderComponent } from './header/header.component';
+import { AccueilComponent } from './accueil/accueil.component';
+
 
 /* Mes services */
 import { AuthService } from './service/auth.service';
@@ -18,7 +20,6 @@ import { MusicsService } from './service/musics.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
-import { AccueilComponent } from './accueil/accueil.component';
 
 
 
