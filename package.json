@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "sass": "sass --watch ./src/sass/styles.scss:./src/public/css/styles.css -w --style expanded",
+    "prefix":"postcss ./src/public/css/styles.css --use autoprefixer -d ./src/public/css/prefixed/"
   },
   "private": true,
   "dependencies": {
@@ -38,5 +40,9 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joeybervin/Musical-car-driving.git"
   }
 }

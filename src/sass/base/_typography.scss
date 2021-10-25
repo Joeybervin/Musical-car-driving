@@ -1,0 +1,17 @@
+html {
+    font-size: 100%;
+}
+
+h1 {
+    font-family: $font_family;
+    font-size: $font-size-header-title;
+    font-weight: bolder;
+}
+
+
+p {
+    font-family: $font_family;
+    font-size: $font-size-base ;
+    font-weight: lighter;
+    
+}
