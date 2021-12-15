@@ -1,0 +1,32 @@
+<!-- PAUSE -->
+
+<div class="list-page">
+
+    <div class="list-page__container">
+        <div class="list-page__header">
+            <p>{{ playlist.title }}</p>
+            <button class="btn btn--margin-bottom btn--blue btn--small" (click)="onNewMusic()">Ajouter une musique</button>
+        </div>
+
+            <div class="list-group-item"
+                *ngFor="let music of musics; let i = index">
+
+                <div class="list-group-item__container">
+                    
+                    <!-- Boutton pour avoir accès à notre playlist -->
+                    <div class="list-group-item__button list-group-item__buttton--border list-group-item__buttton--background"  (click)="onViewMusic(i)">
+                            <h3>{{ music.title }}</h3>
+                            <p>{{ music.artist }}</p>
+                    </div>
+
+                    <!-- Image pour supprimer la playlist -->
+                    <img class="img--cross-delete" (click)="onDeleteMusic(music)" src="../../assets/img/bold-icons/cross-bold.png" alt="icons croix pour supprimer la playlist">
+
+                </div>
+                
+            </div>
+
+
+            <button class="btn btn--margin-bottom btn--yellow btn--small" (click)="onBack()">retour</button>
+    </div>
+</div>

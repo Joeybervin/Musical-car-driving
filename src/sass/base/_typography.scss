@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Typo-Round-Light';
+    src:url('../../assets/fonts/Typo-Round-Light-Demo.ttf.woff') format('woff'),
+        url('../../assets/fonts/Typo-Round-Light-Demo.ttf.svg#Typo-Round-Bold-Demo') format('svg'),
+        url('../../assets/fonts/Typo-Round-Light-Demo.ttf.eot'),
+        url('../../assets/fonts/Typo-Round-Light-Demo.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $base_font_family;
+    font-size: $font-size-header-title;
+    font-weight: bolder;
+    margin-bottom : 30px;
+}
+h2,h3 {
+    font-size: $font-size-subtitle;
+}
+
+
+
+p,nav {
+    font-family: $base_font_family;
+    font-size: $font-size-base ;
+    font-weight: lighter;
+    color: $black;
+    
+}
+
+label {
+    font-family: $base_font_family;
+    font-size: $font-size-label  ;
+    font-weight: lighter;
+    color: $black;
+
+    &:active, &:focus {
+        color: $pink;
+        font-weight: bold;
+    }
+}
+a {
+    color: $black;
+    text-decoration: none;
+
+    &:hover {
+        color: $black;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    &:active {
+        color:$purple;
+        text-decoration: none;
+    }
+    &:focus {
+        color:$purple;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+

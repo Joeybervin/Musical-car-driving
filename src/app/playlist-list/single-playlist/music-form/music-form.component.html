@@ -1,0 +1,41 @@
+<!-- COMMENTAIRE -->
+
+<div>
+    <div>
+
+        <div>
+            <h2>Ajouter une nouvelle musique</h2>
+        </div>
+
+        <form [formGroup]="musicForm" (ngSubmit)="onSaveMusic()">
+
+            <div>
+                <!-- Le titre -->
+                <label for="title">titre</label>
+                    <input type="text" id="title" formControlName="title" >
+
+                <!-- Nom de l'artist -->
+                <label for="artist">artiste(s)</label>
+                    <input type="text" id="artist" formControlName="artist">
+
+                <!-- Nom de l'artist -->
+                <label for="image">Image de l'album</label>
+                    <input type="file" (change)="detectImageFile($event)" id="image" formControlName="image" accept="image/*">
+                <p *ngIf="fileUploaded">fichier téléchargé</p>
+                
+                <!-- URL de la video youtube -->
+                <label for="videoURL">ID de l'url youtube</label>
+                    <input type="text" id="videoURL" formControlName="videoURL" placeholder="url">
+                
+                    <!-- URL de la video youtube 
+                <label for="image">photo de l'album</label>
+                <input type="text" id="image" formControlName="image">-->
+            </div>
+
+            <button [disabled]="musicForm.invalid || fileIsUploading" type="submit">enregistrer</button>
+        </form>
+
+        <button (click)=onBack()>annuler / retour</button>
+
+    </div>
+</div>

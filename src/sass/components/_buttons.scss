@@ -1,0 +1,63 @@
+//
+// Button variables
+//
+// boutton de base
+$btn-base-borderRadius : 17px;
+$btn-base-width : 250px;
+$btn-base-height : 50px;
+$btn-base-border : 3px solid $black;
+$btn-base-boxShadow : 6px 6px 0px $black;
+$btn-base-backgroundColor : $white;
+$btn-base-margin: 15px;
+
+// boutton petit
+$btn-small-borderRadius : 10px;
+$btn-small-width : max(20vw,150px);
+$btn-small-height : 35px;
+$btn-small-border :2px solid $black;
+$btn-small-boxShadow : 3px 3px 0px $black;
+$btn-small-backgroundColor : $white;
+$btn-small-margin: 15px;
+
+
+.btn {
+    // button
+    border-radius : $btn-base-borderRadius ;
+    border: $btn-base-border ;
+    box-shadow: $btn-base-boxShadow  ;
+    background-color: $btn-base-backgroundColor;
+    cursor: pointer;
+    height: $btn-base-height;
+    width: $btn-base-width;
+    margin-bottom:$btn-base-margin;
+    margin-top:$btn-base-margin;
+
+
+    &--small {
+
+        border-radius : $btn-small-borderRadius ;
+        border: $btn-small-border ;
+        box-shadow: $btn-small-boxShadow  ;
+        background-color: $btn-small-backgroundColor;
+        cursor: pointer;
+        height: $btn-small-height;
+        width: $btn-small-width;
+        margin-bottom:$btn-small-margin;
+        margin-top:$btn-small-margin;
+        font-size: max(1vw, 11px);
+    
+
+    }
+
+    // button text
+    text-align: center;
+    @include typography($font-size-button,"light")
+    
+}
+
+
+@each $color,$hex in $colors {
+    .btn--#{$color}:hover {
+        background-color:$hex
+        }
+}

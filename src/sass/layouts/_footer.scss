@@ -1,0 +1,19 @@
+footer {
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    height: 30px;
+    width : 100%;
+    max-width: 100%;
+    background-color:$black;
+
+}
+
+footer p {
+    color:$white;
+    font-size: $font-size-footer;
+    font-family :$base_font_family;
+}

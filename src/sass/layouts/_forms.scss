@@ -1,0 +1,43 @@
+.form {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    min-height: calc(100vh - ($navbar-size-height + $footer-size-height));
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+    }
+
+
+}
+
+.form__title {
+    margin-bottom: 80px;
+}
+
+input {
+    border-radius: 35px;
+    border: 3px solid black;
+    width: max(20vw, 250px);
+    height: max(5vh,25px);
+    margin: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+form {
+
+    text-align: center;
+
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p.text-danger {
+    font-size: 15px;
+}

@@ -1,0 +1,49 @@
+// _________ COLORS _________ 
+//
+$purple : #8D34FF ;
+$pink : #FF93E1 ;
+$yellow: #FFCA43 ;
+$green : #76F599 ;
+$blue : #70BAFF ;
+$white : #FFF;
+$black : #000;
+
+$colors: (pink : #FF93E1, purple : #8D34FF, yellow : #FFCA43, green : #76F599, blue : #70BAFF );
+
+// _________ FONTS _________ 
+//
+$base_font_family : "Segoe UI","Open Sans","Noto Sans","sans-serif";
+$styled_font_family : "Typo-Round-Light",sans-serif;
+// _________ FONTS SIZE _________ 
+//
+
+//text
+$font-size-base : 1.5rem; // 24px
+$font-size-base-title : $font-size-base + .75 ; // 36px
+
+//header & nav
+$font-size-nav-txt: $font-size-base - .25; // 20px
+$font-size-nav-logo : $font-size-base * 2; //48px
+
+//title
+$font-size-header-title: $font-size-base-title; // 36px => h1
+$font-size-subtitle: $font-size-base-title - 0.60; // 26.4px => h2
+
+// bouton
+$font-size-button : $font-size-base - .25; // 20px
+
+//footer
+$font-size-footer : $font-size-base - .50; // 20px
+
+// FORM
+//
+//label
+$font-size-label : $font-size-base - .25; // 20px
+
+// _________ NAVBAR _________ 
+//
+$navbar-size-height: 54px;
+$font-size-navbar-menu-mobile : $font-size-base;
+// _________ FOOTER _________ 
+//
+$footer-size-height: 30px;

@@ -1,0 +1,52 @@
+.nav__burger-menu {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    .nav__burger-menu {
+        display: block;
+        
+    }
+    nav {
+        position: relative;
+
+        
+
+        .nav__link-list {
+            z-index: 100;
+            position:absolute;
+            top: $navbar-size-height;
+            left : 19%;
+            width: 80%;
+            flex-direction: column;
+            align-items: flex-end;
+            box-sizing: border-box;
+            height: calc(100vh - $footer-size-height);
+            padding-top : 60px ;
+            background-color: rgba(255, 255, 255, 0.924);
+            gap: 20px;
+            font-size: $font-size-navbar-menu-mobile ;
+            border-left: solid 10px black;
+            
+            li > a {
+                padding: 10px 20px;
+
+                &.nav__link--padding-right {
+                    padding-right: 20px;
+                }
+                &.nav__link--padding-left {
+                    padding-left: 20px;
+                }
+            }
+
+            // Pour ouvrir et fermer le menu
+            &:not(.open) {
+                transform: translateX(105%);
+                
+                } 
+
+        
+    }
+}}
+
+

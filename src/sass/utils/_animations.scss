@@ -1,0 +1,8 @@
+@keyframes colorchange {
+    0% {color: map-get( $colors, pink )}
+    20% {color: map-get( $colors, violet )}
+    40% {color: map-get( $colors, blue )}
+    60% {color: map-get( $colors, yellow )}
+    80% {color: map-get($colors, green )}
+    100% {color: black}
+}

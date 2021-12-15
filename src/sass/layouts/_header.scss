@@ -1,0 +1,67 @@
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    min-height: $navbar-size-height;
+    
+
+    /* font */
+    font-family: $styled_font_family ;
+    font-size: $font-size-nav-txt;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        box-sizing: border-box;
+        padding: 0 10%;
+        min-width: 100%;
+        min-height: $navbar-size-height;
+
+    }
+
+    @media (max-width: 750px) {
+        margin-bottom: 50px;
+    }
+}
+
+/* LOGO */
+.header__logo{
+    font-size: $font-size-nav-logo;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 3px 0 ;
+    // Voir si vraiment essentiel au design
+    /* border: 3px solid black;
+    border-top: none;
+    padding-left: 10px;
+    padding-right: 10px; */
+
+    &:hover {
+        animation : 2s linear infinite colorchange;
+    }
+}
+
+/* NAVBAR */
+.nav__link-list {
+    display: inline-flex;
+    box-sizing: border-box;
+    height: 100%;
+
+    li > a {
+        padding: 15px 17px;
+
+        &.nav__link--padding-right {
+            padding-right: 0;
+        }
+        &.nav__link--padding-left {
+            padding-left: 0;
+        }
+       
+    }
+}
+
