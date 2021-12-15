@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { resolve } from 'dns';
 import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 import { Music } from 'src/app/models/music.model';
 import { MusicsService } from 'src/app/services/musics.service';
@@ -55,10 +54,13 @@ export class MusicFormComponent implements OnInit {
     if (this.musicForm.get('videoURL')?.value != ''){
       newMusic.videoURL = this.videoUrl + this.musicForm.get('videoURL')?.value;
     };
-  
-    const storage = getStorage();
-    const imagesRef = ref(storage, 'images/'+ this.musicForm.get('image')?.value.replace("C:\\fakepath\\",''));
-    newMusic.imageName = this.musicForm.get('image')?.value.replace("C:\\fakepath\\",'')
+    if ( this.musicForm.get('image')?.value != '') {
+        const storage = getStorage();
+        const imagesRef = ref(storage, 'images/'+ this.musicForm.get('image')?.value.replace("C:\\fakepath\\",''));
+
+
+      newMusic.imageName = this.musicForm.get('image')?.value.replace("C:\\fakepath\\",'')
+
         // Get the download URL
       getDownloadURL(imagesRef)
         .then((url) => {
@@ -67,11 +69,19 @@ export class MusicFormComponent implements OnInit {
           newMusic.image = url;
           this.musicsService.createNewMusic(newMusic,this.playlistId);
     })
-      
+
+
+
+
+
+    }
     
-   
+
 
     
+
+
+
     if ( this.musicForm.get('image')?.value == '') {
       this.musicsService.createNewMusic(newMusic,this.playlistId);
     }
