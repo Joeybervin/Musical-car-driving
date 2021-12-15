@@ -56,23 +56,17 @@ export class SinglePlaylistComponent implements OnInit,OnDestroy {
       
   }
 
-  // Pour créer une nouvelle musict
-  //   => en réaction à un clique de l'utilisateur
-  //
+
   onNewMusic() {
     this.router.navigate(['playlists','view', this.playlistId ,'musics','new'])
   }
 
-  // Pour supprimer une musict
-  //  => en réaction à un clique de l'utilisateur
-  //
+
   onDeleteMusic(music: Music ) {
     this.musicsService.removeMusic(music,this.playlistId)
   }
 
-  // Pour naviguer vers une musique en particulier
-  //  => en réaction à un clique de l'utilisateur
-  //
+
   onViewMusic( musicId:number) {
     this.router.navigate(['playlists','view' , this.playlistId , 'musics','view', musicId , 'music'])
     

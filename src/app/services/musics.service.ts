@@ -3,7 +3,7 @@ import { Music } from '../../app/models/music.model';
 import { Subject } from 'rxjs';
 import { getDatabase, ref as ref_database , onValue, update } from "firebase/database";
 import { ActivatedRoute } from '@angular/router';
-import { getStorage, ref as ref_storage, uploadBytesResumable, getDownloadURL, uploadBytes } from "firebase/storage";
+import { getStorage, ref as ref_storage, uploadBytesResumable, getDownloadURL, uploadBytes, deleteObject } from "firebase/storage";
 
 
 @Injectable({
@@ -37,7 +37,6 @@ export class MusicsService {
 
   saveMusicsImage(playlistId:string, musicId: string, imageURL : string) {
     const db = getDatabase();
-    
     update(ref_database(db,`/playlists/${playlistId}/musics/${musicId}`), {
       image : imageURL,
     });
@@ -79,6 +78,17 @@ export class MusicsService {
   }
 
   removeMusic(music: Music,playlistId:string) {
+    if (music.image) {
+      const storage = getStorage();
+      const storageRef = ref_storage(storage, 'images/'  + music.imageName);
+      console.log(storageRef)
+      deleteObject(storageRef).then(() => {
+        
+        console.log('image supprimé')
+      }).catch((error) => {
+        console.log('ERREUR : image non supprimé' + error)
+      });
+    }
     const MusicToRemove = this.musics.findIndex(
       (musicElement) => {
         if (musicElement === music ) {
@@ -103,9 +113,8 @@ export class MusicsService {
       const metadata = { contentType: 'image/jpeg' };
 
       // Create a special key to name the file
-      //const fileNameKey = Date.now().toString()
       const storageRef = ref_storage(storage, 'images/'  + file.name);
-      // Upload file and metadata to the object 'images/mountains.jpg'
+
       const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 
       // Listen for state changes, errors, and completion of the upload.
@@ -156,23 +165,6 @@ export class MusicsService {
     
   }
 
-
-
-
-
-  ShowTheImage(imageURL: any) {
-    const storage = getStorage();
-    const imagesRef = ref_storage(storage, 'images/'+ imageURL);
-
-    
-    // Get the download URL
-    getDownloadURL(imagesRef)
-      .then((url) => {
-        return url
-        
-        
-  })
-  }
 
 
 }

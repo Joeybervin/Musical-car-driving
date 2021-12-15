@@ -52,17 +52,13 @@ export class MusicFormComponent implements OnInit {
     
     const newMusic = new Music(title, artist)
 
-
     if (this.musicForm.get('videoURL')?.value != ''){
-      
       newMusic.videoURL = this.videoUrl + this.musicForm.get('videoURL')?.value;
     };
   
-    
     const storage = getStorage();
     const imagesRef = ref(storage, 'images/'+ this.musicForm.get('image')?.value.replace("C:\\fakepath\\",''));
-
-    
+    newMusic.imageName = this.musicForm.get('image')?.value.replace("C:\\fakepath\\",'')
         // Get the download URL
       getDownloadURL(imagesRef)
         .then((url) => {
