@@ -28,7 +28,6 @@ import { PlaylistsService } from './services/playlists.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-import { YouTubePlayerModule } from "@angular/youtube-player";
 import { YoutubeUrlPipe } from './pipes/youtube-url.pipe';
 
 
@@ -72,7 +71,6 @@ const appRoutes : Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    YouTubePlayerModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
