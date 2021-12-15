@@ -3,29 +3,26 @@
     <div class="page-container__container">
         
         <div class="page-container__container page-container__container--border">
-            <iframe *ngIf="music.videoURL" [src]="music.videoURL | youtubeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+            <!-- Video youtube -->
+            <iframe *ngIf="music.videoURL" [src]="music.videoURL | youtubeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 <div class="items-main-container">
 
+                    <!-- Nom d'artiste + Titre de l'album -->
                     <div class="items-sub-container">
                     <h3>{{music.title}}</h3>
                     <p>{{music.artist}}</p>
                     </div>
 
-
-                
+                    <!-- Image de l'album -->
                     <img *ngIf="music.image" style="max-width:200px" [src]="music.image | youtubeUrl" >
 
                 </div>
 
-                
-                
-                
         </div>
-        
+        <!-- Boutton de retour -->
         <button class="btn btn--blue btn--small btn--margin-left btn--margin-top" (click)=onBack()>retour</button>
     </div>
 
-    
 </div>
