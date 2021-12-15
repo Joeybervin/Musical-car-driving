@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Musics": {
+    "SingingCar": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,19 +39,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Musics",
+            "outputPath": "dist/SingingCar",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/sass/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -92,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Musics:build:production"
+              "browserTarget": "SingingCar:build:production"
             },
             "development": {
-              "browserTarget": "Musics:build:development"
+              "browserTarget": "SingingCar:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +101,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Musics:build"
+            "browserTarget": "SingingCar:build"
           }
         },
         "test": {
@@ -115,17 +113,26 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/sass/assets"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "SingingCar:build:production",
+            "firebaseProject": "singingcarproject",
+            "firebaseHostingSite": "singingcarproject"
+          }
         }
       }
     }
   },
-  "defaultProject": "Musics"
+  "defaultProject": "SingingCar"
 }

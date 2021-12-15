@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "singingcarproject": {
+      "hosting": {
+        "SingingCar": [
+          "singingcarproject"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "singingcarproject"
+  }
+}
