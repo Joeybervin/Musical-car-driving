@@ -49,6 +49,17 @@ $btn-small-margin: 15px;
 
     }
 
+    &--margin-left {
+        margin-left: 20px;
+    }
+    &--margin-top {
+        margin-top: 25px;
+        @media (max-width: 750px) {
+            margin-top: 0px;
+         }
+
+    }
+
     // button text
     text-align: center;
     @include typography($font-size-button,"light")

@@ -2,10 +2,12 @@
 .list-page {
     display: flex;
     justify-content: center;
+    min-height: calc(100vh - (30px + 54px + 50px));
 
     &__container{
         width: 80%;
         max-width: 80%;
+        margin-bottom: 50px;
         
         @media (max-width: 750px) {
             max-width: 90%;
@@ -16,6 +18,7 @@
 
 .list-page__header {
     display: grid;
+    align-items: center;
     grid-template-columns: 1fr ;
     grid-template-rows: 1fr ;
     margin-bottom: 80px;
@@ -35,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
     img.img--cross-delete {
         display: none;
@@ -54,17 +58,13 @@
 };
 
 .list-group-item__button {
-
-    
     border-radius: 25px;
     width : 90%;
     margin-bottom: 10px;
-    padding: 0px 25px;
+    padding: 15px 25px;
     vertical-align: middle;
     box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.082);
     cursor: pointer;
-
-    
 
     &--border {
         border: 3px solid black;

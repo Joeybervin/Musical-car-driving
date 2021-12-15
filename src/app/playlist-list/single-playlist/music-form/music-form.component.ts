@@ -23,9 +23,6 @@ export class MusicFormComponent implements OnInit {
   embedYoutubeURL = 'https://www.youtube.com/embed/' ;
   videoUrl : string = this.embedYoutubeURL ;
 
-  
-
-
   constructor(private formBuilder: FormBuilder,
               private musicsService : MusicsService,
               private router: Router,
@@ -54,39 +51,27 @@ export class MusicFormComponent implements OnInit {
     if (this.musicForm.get('videoURL')?.value != ''){
       newMusic.videoURL = this.videoUrl + this.musicForm.get('videoURL')?.value;
     };
+
     if ( this.musicForm.get('image')?.value != '') {
         const storage = getStorage();
         const imagesRef = ref(storage, 'images/'+ this.musicForm.get('image')?.value.replace("C:\\fakepath\\",''));
 
 
-      newMusic.imageName = this.musicForm.get('image')?.value.replace("C:\\fakepath\\",'')
+        newMusic.imageName = this.musicForm.get('image')?.value.replace("C:\\fakepath\\",'')
 
         // Get the download URL
-      getDownloadURL(imagesRef)
+        getDownloadURL(imagesRef)
         .then((url) => {
           console.log(url)
           
           newMusic.image = url;
           this.musicsService.createNewMusic(newMusic,this.playlistId);
-    })
-
-
-
-
-
-    }
+    });
+  }
     
-
-
-    
-
-
-
     if ( this.musicForm.get('image')?.value == '') {
       this.musicsService.createNewMusic(newMusic,this.playlistId);
     }
-    
-    
 
     this.router.navigate(['/playlists','view' , this.playlistId, 'musics'])
   }

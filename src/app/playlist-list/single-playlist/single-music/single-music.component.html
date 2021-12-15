@@ -1,19 +1,31 @@
-<div >
-    <iframe *ngIf="music.videoURL" [src]="music.videoURL | youtubeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="page-container__page" >
+
+    <div class="page-container__container">
+        
+        <div class="page-container__container page-container__container--border">
+            <iframe *ngIf="music.videoURL" [src]="music.videoURL | youtubeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+                <div class="items-main-container">
+
+                    <div class="items-sub-container">
+                    <h3>{{music.title}}</h3>
+                    <p>{{music.artist}}</p>
+                    </div>
 
 
-    <p>{{music.title}}</p>
-    <p>{{music.artist}}</p>
-    <p>VIDEO</p>
-    <p>{{music.videoURL}}</p>
-    <p>IMAGE</p>
-    <p>{{music.image}}</p>
+                
+                    <img *ngIf="music.image" style="max-width:200px" [src]="music.image | youtubeUrl" >
 
-    <img *ngIf="music.image" style="max-width:200px" [src]="music.image | youtubeUrl" >
+                </div>
 
-    <button (click)=onBack()>retour</button>
+                
+                
+                
+        </div>
+        
+        <button class="btn btn--blue btn--small btn--margin-left btn--margin-top" (click)=onBack()>retour</button>
+    </div>
 
-
+    
 </div>

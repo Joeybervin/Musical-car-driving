@@ -1,4 +1,6 @@
-
+#page-container {
+    overflow: hidden;
+}
 /* HEADER */
 .header {
     display: flex;
@@ -54,7 +56,6 @@
 
     li > a {
         padding: 15px 17px;
-
         &.nav__link--padding-right {
             padding-right: 0;
         }

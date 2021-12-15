@@ -3,7 +3,7 @@ import { Music } from '../../app/models/music.model';
 import { Subject } from 'rxjs';
 import { getDatabase, ref as ref_database , onValue, update } from "firebase/database";
 import { ActivatedRoute } from '@angular/router';
-import { getStorage, ref as ref_storage, uploadBytesResumable, getDownloadURL, uploadBytes, deleteObject } from "firebase/storage";
+import { getStorage, ref as ref_storage, uploadBytesResumable, getDownloadURL, deleteObject } from "firebase/storage";
 
 
 @Injectable({
