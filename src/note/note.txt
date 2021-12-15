@@ -1,3 +1,0 @@
-POUR UN NOIR DEGRADE  -> background-image: linear-gradient(to right, #434343 0%, black 100%);
-
-background-image: linear-gradient(to right top, #000000, #0c0b0c, #141415, #1a1a1b, #202122, #242626, #282a2b, #2d2f2f, #303232, #343636, #373939, #3b3d3d);
