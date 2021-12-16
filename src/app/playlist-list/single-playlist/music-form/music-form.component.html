@@ -1,41 +1,49 @@
 <!-- COMMENTAIRE -->
 
-<div>
-    <div>
+<div class="form">
+    <div class="form__container">
 
-        <div>
-            <h2>Ajouter une nouvelle musique</h2>
-        </div>
+       <!-- Titre de la page -->
+        <h2 class="form__title">Ajouter une nouvelle musique</h2>
 
         <form [formGroup]="musicForm" (ngSubmit)="onSaveMusic()">
 
             <div>
                 <!-- Le titre -->
-                <label for="title">titre</label>
+                <div class="form-group">
+                    <label for="title">titre</label>
                     <input type="text" id="title" formControlName="title" >
+                </div>
 
                 <!-- Nom de l'artist -->
-                <label for="artist">artiste(s)</label>
+                <div class="form-group">
+                    <label for="artist">artiste(s)</label>
                     <input type="text" id="artist" formControlName="artist">
+                </div>
 
                 <!-- Nom de l'artist -->
-                <label for="image">Image de l'album</label>
-                    <input type="file" (change)="detectImageFile($event)" id="image" formControlName="image" accept="image/*">
-                <p *ngIf="fileUploaded">fichier téléchargé</p>
-                
+                <div class="form-group">
+                    <label for="image">Image de l'album</label>
+                    <label class="custom-file-upload" for="image">Choisir un fichier</label>
+                    <input  type="file" (change)="detectImageFile($event)" id="image" formControlName="image" accept="image/*">
+                    <p *ngIf="fileUploaded">fichier téléchargé</p>
+                </div>
+
                 <!-- URL de la video youtube -->
-                <label for="videoURL">ID de l'url youtube</label>
+                <div class="form-group">
+                    <label for="videoURL">ID de l'url youtube</label>
                     <input type="text" id="videoURL" formControlName="videoURL" placeholder="url">
-                
-                    <!-- URL de la video youtube 
-                <label for="image">photo de l'album</label>
-                <input type="text" id="image" formControlName="image">-->
+                </div>
+                    
             </div>
 
-            <button [disabled]="musicForm.invalid || fileIsUploading" type="submit">enregistrer</button>
+            <button type="submit" class="btn btn--center btn--purple" [disabled]="musicForm.invalid || fileIsUploading">enregistrer</button>
+
         </form>
 
-        <button (click)=onBack()>annuler / retour</button>
-
+        
+    <button class="btn btn--margin-bottom btn--pink btn--small" (click)=onBack()>annuler / retour</button>
     </div>
+
+    
 </div>

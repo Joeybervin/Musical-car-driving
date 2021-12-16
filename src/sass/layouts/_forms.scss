@@ -2,12 +2,12 @@
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    text-align: center;
     min-height: calc(100vh - ($navbar-size-height + $footer-size-height));
 
     &__container {
         display: flex;
         flex-direction: column;
-        align-items: center;
         width: 90vw;
     }
 
@@ -17,8 +17,22 @@
 .form__title {
     margin-bottom: 80px;
 }
+input[type="file"] {
+    display: none;
+}
 
-input {
+.custom-file-upload{
+    cursor: pointer;
+    box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.171);
+    font-weight: semi-bold;
+    &:hover {
+        background-color:$black;
+        color:white;
+    }
+}
+
+
+input,.custom-file-upload {
     border-radius: 35px;
     border: 3px solid black;
     width: max(20vw, 250px);
@@ -26,6 +40,10 @@ input {
     margin: 15px;
     margin-bottom: 25px;
     text-align: center;
+    vertical-align: middle;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 form {
 
@@ -41,3 +59,10 @@ form {
 p.text-danger {
     font-size: 15px;
 }
+
+
+/* Chrome, Firefox, Opera, Safari 10.1+ and Internet Explorer 10-11 and Microsoft Edge */
+::placeholder { 
+    font-size: 18px;
+    
+  }

@@ -1,18 +1,18 @@
-<div>
-    <div>
+<div class="form">
+    <div class="form__container">
 
-        <div>
-            <h2>Ajouter une nouvelle Playlist</h2>
-        </div>
+        
+            <h2 class="form__title">Ajouter une nouvelle Playlist</h2>
+        
 
         <form [formGroup]="playlistForm" (ngSubmit)="onSavePlaylist()">
 
-            <div>
+            <div class="form-group">
                 <label for="title">Nom de la playlist</label>
-                    <input type="text" id="title" formControlName="title" >
+                    <input class="form-control" type="text" id="title" formControlName="title" >
             </div>
 
-            <button [disabled]="playlistForm.invalid" type="submit">enregistrer</button>
+            <button class="btn btn--center btn--yellow" [disabled]="playlistForm.invalid" type="submit">enregistrer</button>
 
         </form>
 
