@@ -46,7 +46,8 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.scss"
@@ -116,8 +117,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/_redirects"
+              "src/styles.scss"
+              
             ],
             "scripts": []
           }
