@@ -19,6 +19,7 @@ export class AuthService {
       },
       (error: any) => {
         reject(error);
+        console.log(error);
           }
         )
       }
@@ -36,6 +37,7 @@ export class AuthService {
         },
         (error: any) => {
           reject(error);
+          console.log(error)
             }
           )
         }

@@ -34,6 +34,7 @@ export class SignupComponent implements OnInit {
 
   /* Afin de soumettre le formulaire */
   onSubmit() {
+    console.log('coco');
     const email = this.signUpForm.get('email')?.value;
     const password = this.signUpForm.get('password')?.value;
     this.authService.createNewUser(email, password).then(
@@ -46,5 +47,6 @@ export class SignupComponent implements OnInit {
       }
     )
   }
+
 
 }
