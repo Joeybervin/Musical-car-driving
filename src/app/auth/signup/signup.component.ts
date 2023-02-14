@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  signUpForm!: FormGroup;
+  signUpForm!: UntypedFormGroup;
   errorMessage!: string;
 
   constructor(private authService: AuthService,
-              private formBuilder: FormBuilder,
+              private formBuilder: UntypedFormBuilder,
               private router: Router) { }
 
   ngOnInit() {

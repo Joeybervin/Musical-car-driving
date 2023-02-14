@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 import { Music } from 'src/app/models/music.model';
@@ -13,7 +13,7 @@ import { MusicsService } from 'src/app/services/musics.service';
 })
 export class MusicFormComponent implements OnInit {
 
-  musicForm! : FormGroup;
+  musicForm! : UntypedFormGroup;
   playlistId = this.route.snapshot.params['playlistId']
   musicId = this.route.snapshot.params['musicId']
   fileUrl!: string;
@@ -23,7 +23,7 @@ export class MusicFormComponent implements OnInit {
   embedYoutubeURL = 'https://www.youtube.com/embed/' ;
   videoUrl : string = this.embedYoutubeURL ;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
               private musicsService : MusicsService,
               private router: Router,
               private route : ActivatedRoute) { }

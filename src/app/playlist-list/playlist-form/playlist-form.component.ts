@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Music } from 'src/app/models/music.model';
 import { Playlist } from 'src/app/models/playlist.model';
@@ -13,10 +13,10 @@ import { PlaylistsService } from 'src/app/services/playlists.service';
 })
 export class PlaylistFormComponent implements OnInit {
 
-  playlistForm!: FormGroup;
+  playlistForm!: UntypedFormGroup;
   musics: Music[] = [];
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
               private playlistsService: PlaylistsService,
               private router: Router) { }
 
